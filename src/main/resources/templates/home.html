@@ -6,18 +6,38 @@
 
 <div ng-app="myApp" ng-controller='testController'>
   <p><input type="submit" ng-click="callService()"> </input></p>
-  <p ng-bind="response1"></p>
-  <p ng-bind="response2"></p>
-  <p ng-bind="response3"></p>
-  <p ng-bind="response4"></p>
+  <p ng-bind= "response1a"></p>
+  <p ng-bind= "response1b"></p>
+  <p ng-bind= "response1c"></p>
+  <p ng-bind= "response1d"></p>
+  <p ng-bind= "response1e"></p>
+  <p ng-bind= "response1f"></p>
+  <p ng-bind= "response2a"></p>
+  <p ng-bind= "response2b"></p>
+  <p ng-bind= "response2c"></p>
+  <p ng-bind= "response2d"></p>
+  <p ng-bind= "response2e"></p>
+  <p ng-bind= "response2f"></p>
+  <p ng-bind= "response3a"></p>
+  <p ng-bind= "response3b"></p>
+  <p ng-bind= "response3c"></p>
+  <p ng-bind= "response3d"></p>
+  <p ng-bind= "response3e"></p>
+  <p ng-bind= "response3f"></p>
+   <p ng-bind= "response4a"></p>
+  <p ng-bind= "response4b"></p>
+  <p ng-bind= "response4c"></p>
+  <p ng-bind= "response4d"></p>
+  <p ng-bind= "response4e"></p>
+  <p ng-bind= "response4f"></p>
 </div>
 <script>
 var app=angular.module('myApp',[]);
 app.controller("testController",['$scope','$http','$timeout', function($scope,$http,$timeout){
-    $scope.response1 = '';  
-    $scope.response2 = ''; 
-    $scope.response3 = ''; 
-    $scope.response4 = ''; 
+    $scope.response1 = [];  
+    $scope.response2 = []; 
+    $scope.response3 = []; 
+    $scope.response4 = []; 
 	var id =1;
        var ajax = function(type,url,data) {
           
@@ -28,28 +48,100 @@ app.controller("testController",['$scope','$http','$timeout', function($scope,$h
                         } }).then(function(result){
 
                         //alert('call success1');
-                         $scope.response1 = result.data[0];
+                         $scope.response1 = result.data;
                          $timeout(function(){
-                        	 $http({method:'GET', url:'http://localhost:8080/deferred/'+2, data:'',headers: {
+                        	 $scope.response1a =  $scope.response1[0];
+                         },2000);
+                         $timeout(function(){
+                        	 $scope.response1b =  $scope.response1[1];
+                         },4000);
+                         $timeout(function(){
+                        	 $scope.response1c =  $scope.response1[2];
+                         },6000);
+                         $timeout(function(){
+                        	 $scope.response1d =  $scope.response1[3];
+                         },8000);
+                         $timeout(function(){
+                        	 $scope.response1e =  $scope.response1[4];
+                         },10000);
+                         $timeout(function(){
+                        	 $scope.response1f =  $scope.response1[5];
+                         },12000);
+                         $timeout(function(){
+                        	 $http({method:'GET', url:'http://localhost:8080/deferreds/'+2, data:'',headers: {
 	                             'Content-Type': 'application/json'
 	                     	 } }).then(function(result){
 	
 	                     //  alert('call success2');
-	                       $scope.response2 = result.data[0];
+	                       $scope.response2 = result.data;
 	                       $timeout(function(){
-	                    	   $http({method:'GET', url:'http://localhost:8080/deferred/'+3, data:'',headers: {
+	                        	 $scope.response2a =  $scope.response2[0];
+	                         },14000);
+	                         $timeout(function(){
+	                        	 $scope.response2b =  $scope.response2[1];
+	                         },16000);
+	                         $timeout(function(){
+	                        	 $scope.response2c =  $scope.response2[2];
+	                         },18000);
+	                         $timeout(function(){
+	                        	 $scope.response2d =  $scope.response2[3];
+	                         },20000);
+	                         $timeout(function(){
+	                        	 $scope.response2e =  $scope.response2[4];
+	                         },22000);
+	                         $timeout(function(){
+	                        	 $scope.response2f =  $scope.response2[5];
+	                         },24000);
+	                       $timeout(function(){
+	                    	   $http({method:'GET', url:'http://localhost:8080/deferreds/'+3, data:'',headers: {
 		                             'Content-Type': 'application/json'
 		                     	 } }).then(function(result){
 		
 		                     //  alert('call success3');
-		                       $scope.response3 = result.data[0];
+		                       $scope.response3 = result.data;
 		                       $timeout(function(){
-		                    	   $http({method:'GET', url:'http://localhost:8080/deferred/'+4, data:'',headers: {
+		                        	 $scope.response3a =  $scope.response3[0];
+		                         },26000);
+		                         $timeout(function(){
+		                        	 $scope.response3b =  $scope.response3[1];
+		                         },28000);
+		                         $timeout(function(){
+		                        	 $scope.response3c =  $scope.response3[2];
+		                         },30000);
+		                         $timeout(function(){
+		                        	 $scope.response3d =  $scope.response3[3];
+		                         },32000);
+		                         $timeout(function(){
+		                        	 $scope.response3e =  $scope.response3[4];
+		                         },34000);
+		                         $timeout(function(){
+		                        	 $scope.response3f =  $scope.response3[5];
+		                         },36000);
+		                       $timeout(function(){
+		                    	   $http({method:'GET', url:'http://localhost:8080/deferreds/'+4, data:'',headers: {
 			                             'Content-Type': 'application/json'
 			                     	 } }).then(function(result){
 			
 			                  //     alert('call success4');
-			                       $scope.response4 = result.data[0];
+			                       $scope.response4 = result.data;
+			                       $timeout(function(){
+			                        	 $scope.response4a =  $scope.response4[0];
+			                         },38000);
+			                         $timeout(function(){
+			                        	 $scope.response4b =  $scope.response4[1];
+			                         },40000);
+			                         $timeout(function(){
+			                        	 $scope.response4c =  $scope.response4[2];
+			                         },42000);
+			                         $timeout(function(){
+			                        	 $scope.response4d =  $scope.response4[3];
+			                         },44000);
+			                         $timeout(function(){
+			                        	 $scope.response4e =  $scope.response4[4];
+			                         },46000);
+			                         $timeout(function(){
+			                        	 $scope.response4f =  $scope.response4[5];
+			                         },48000);
 			                       
 			                 	},function(result){
 			
@@ -81,7 +173,7 @@ app.controller("testController",['$scope','$http','$timeout', function($scope,$h
 
       $scope.callService = function(){
     	  
-   	   		ajax('GET','http://localhost:8080/deferred/'+id,'');
+   	   		ajax('GET','http://localhost:8080/deferreds/'+id,'');
       };
       
       
